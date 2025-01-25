@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/userRoutes.js";
 import mongoose from "mongoose";
+import * as path from "node:path";
 
 
 const app = express();
