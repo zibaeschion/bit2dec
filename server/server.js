@@ -20,5 +20,5 @@ mongoose.connect(process.env.ATLAS_URI)
 
 // start the Express server
 app.listen(port, () => {
-    console.log(`Server listening on Port 5050...`);
+    console.log(`Server listening on Port ` + port + "...");
 });
