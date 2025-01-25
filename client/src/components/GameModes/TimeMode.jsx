@@ -6,7 +6,7 @@ import useClassicSettings from "../hooks/useClassicSettings.jsx";
 import useTimer from "../hooks/useTimer.jsx";
 import RandomSelection from "../functions/GameModeFunctions/General/RandomSelection.jsx";
 
-const TimeMode = () => {
+const TimeMode = (user) => {
     // Retrieve game state and settings using custom hook
     const {
         bitLength,
@@ -30,7 +30,7 @@ const TimeMode = () => {
         correctAnswer,
     } = useClassicSettings();
 
-    const username = "sebastian";  // Set a static username
+    const username = user;  // Set a static username
 
     // Local state variables for tracking game progress
     const [showRestartButton, setShowRestartButton] = useState(false);

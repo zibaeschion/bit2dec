@@ -26,10 +26,14 @@ const Login = ({ setUser, handleToggleOpen }) => {
             signUp(username, password);
             handleCancel();
         } else {
-            const user = signIn(username, password);
-            setUser(user.username);
-            console.log(user);
-            handleCancel()
+            signIn(username, password)
+                .then(result => {
+                    console.log(result.username);
+                    setUser(result.username);
+                    handleCancel();
+                })
+                .catch(err => console.log(err));
+
         }
     };
 
