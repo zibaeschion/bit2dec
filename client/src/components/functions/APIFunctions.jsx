@@ -35,7 +35,7 @@ export async function updateHighScoreEight(username, newHighScoreEight) {
 }
 
 export async function signIn(username, password) {
-    await axios.post("https://bit2dec.onrender.com/user/signIn", {username, password})
+    return await axios.post("https://bit2dec.onrender.com/user/signIn", {username, password})
         .then(result => result.data)
         .catch(err => console.log(err));
 }

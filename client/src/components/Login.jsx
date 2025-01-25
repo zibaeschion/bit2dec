@@ -28,6 +28,7 @@ const Login = ({ setUser, handleToggleOpen }) => {
         } else {
             console.log("Logging in with:", {username, password});
             setUser(signIn(username, password));
+            console.log("Logged in")
         }
     };
 

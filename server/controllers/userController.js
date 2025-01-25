@@ -14,7 +14,6 @@ const register = async (req, res) => {
 
 const signIn = async (req, res) => {
     try {
-        console.log(req.body);
         const {username, password} = req.body;
 
         const user = await UserModel.findOne({username, password}).lean();
