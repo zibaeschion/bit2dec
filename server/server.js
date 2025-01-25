@@ -18,6 +18,22 @@ mongoose.connect(process.env.ATLAS_URI)
         process.exit(1);
     });
 
+// Middleware
+app.use(express.json());
+
+// API-Routen
+app.use("/api", (req, res) => {
+    res.json({ message: "API funktioniert!" });
+});
+
+// Statische Dateien aus dem React-Build-Ordner ausliefern
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+// Alle anderen Routen an die React-App weiterleiten
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
+
 // start the Express server
 app.listen(port, () => {
     console.log(`Server listening on Port ` + port + "...");
