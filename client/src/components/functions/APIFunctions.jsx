@@ -34,6 +34,12 @@ export async function updateHighScoreEight(username, newHighScoreEight) {
         .catch()
 }
 
+export async function signIn(username, password) {
+    await axios.post("https://bit2dec.onrender.com/user/signIn", {username, password})
+        .then(result => result.data)
+        .catch(err => console.log(err));
+}
+
 export async function collectLeaderboardData(selectedLeaderboard) {
     return await axios
         .get(`https://bit2dec.onrender.com/user/LeaderboardData/${selectedLeaderboard}`)

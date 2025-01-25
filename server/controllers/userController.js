@@ -10,7 +10,22 @@ const register = async (req, res) => {
     }).catch(error => {
         res.status(500).send(error);
     });
+}
 
+const signIn = async (req, res) => {
+    try {
+        console.log(req.body);
+        const {username, password} = req.body;
+
+        const user = await UserModel.findOne({username, password}).lean();
+        if (!user) {
+            res.status(401).send("User not found!");
+        }
+        res.status(200).send(user);
+    }
+    catch (error) {
+        res.status(500).send(error);
+    }
 }
 
 const getHighScoreFour = async (req, res) => {
@@ -90,4 +105,4 @@ const collectLeaderboardData = async (req, res) => {
 };
 
 
-export default {register, getHighScoreFour, updateHighScoreFour, getHighScoreEight, updateHighScoreEight, collectLeaderboardData}
+export default {register, getHighScoreFour, updateHighScoreFour, getHighScoreEight, updateHighScoreEight, collectLeaderboardData, signIn}

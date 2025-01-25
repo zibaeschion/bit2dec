@@ -5,6 +5,8 @@ const router = express();
 
 router.post("/register", userController.register);
 
+router.post("/signIn", userController.signIn)
+
 router.post("/getHighScoreFour", userController.getHighScoreFour);
 
 router.post("/updateHighScoreFour", userController.updateHighScoreFour);

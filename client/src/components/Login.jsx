@@ -3,9 +3,9 @@ import { Box, TextField, Button, Typography, Link } from "@mui/material";
 import theme from "../Themes/ThemeDefault.jsx";
 import { ThemeProvider } from "@mui/material/styles";
 import PropTypes from "prop-types";
-import {signUp} from "./functions/APIFunctions.jsx";
+import {signIn, signUp} from "./functions/APIFunctions.jsx";
 
-const Login = ({ handleToggleOpen }) => {
+const Login = ({ setUser, handleToggleOpen }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [isSignUp, setIsSignUp] = useState(false);
@@ -27,6 +27,7 @@ const Login = ({ handleToggleOpen }) => {
             handleCancel();
         } else {
             console.log("Logging in with:", {username, password});
+            setUser(signIn(username, password));
         }
     };
 

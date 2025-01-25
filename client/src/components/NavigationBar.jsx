@@ -8,6 +8,7 @@ const NavigationBar = () => {
     const navigate = useNavigate();
 
     const [open, setOpen] = useState(false);
+    const [user, setUser] = useState({});
 
     const handleToggleOpen = () => {
         if (open) {
@@ -40,7 +41,7 @@ const NavigationBar = () => {
                     }}
                     onClick={() => handleToggleOpen()}
                 >
-                    Login
+                    {user ? `Welcome, ${user.username}` : 'Login'}
                 </Button>
 
                 {/* Centered Title */}
@@ -65,7 +66,10 @@ const NavigationBar = () => {
                         borderRadius: '20px',
                 }}
                 >
-                    <Login handleToggleOpen={handleToggleOpen} />
+                    <Login
+                        setUser = {setUser}
+                        handleToggleOpen={handleToggleOpen}
+                    />
                 </DialogContent>
             </Dialog>
         </AppBar>
