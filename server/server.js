@@ -3,10 +3,14 @@ import cors from "cors";
 import userRoutes from "./routes/userRoutes.js";
 import mongoose from "mongoose";
 import * as path from "node:path";
+import { fileURLToPath } from "url";
 
+// Get the directory name from the current file's URL
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5050;
 
 app.use(cors());
 app.use(express.json());
@@ -35,7 +39,7 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
 
-// start the Express server
+// Start the Express server
 app.listen(port, () => {
     console.log(`Server listening on Port ` + port + "...");
 });

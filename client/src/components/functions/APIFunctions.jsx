@@ -1,13 +1,13 @@
 import axios from "axios";
 
 export async function signUp(username, password) {
-    axios.post("http://localhost:5050/user/register", {username, password})
+    axios.post("https://bit2dec.onrender.com/user/register", {username, password})
         .then(result => {})
         .catch(err => console.log(err));
 }
 
 export async function getHighScoreFour(username) {
-    return await axios.post("http://localhost:5050/user/getHighScoreFour/", {username})
+    return await axios.post("https://bit2dec.onrender.com/user/getHighScoreFour/", {username})
         .then(result => {
             return result.data;
         })
@@ -15,13 +15,13 @@ export async function getHighScoreFour(username) {
 }
 
 export async function updateHighScoreFour(username, newHighScoreFour) {
-     await axios.post("http://localhost:5050/user/updateHighScoreFour", {username, newHighScoreFour}, )
+     await axios.post("https://bit2dec.onrender.com/user/updateHighScoreFour", {username, newHighScoreFour}, )
          .then(result => {})
          .catch()
 }
 
 export async function getHighScoreEight(username) {
-    return await axios.post("http://localhost:5050/user/getHighScoreEight/", {username})
+    return await axios.post("https://bit2dec.onrender.com/user/getHighScoreEight/", {username})
         .then(result => {
             return result.data;
         })
