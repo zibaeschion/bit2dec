@@ -14,13 +14,17 @@ const register = async (req, res) => {
 
 const signIn = async (req, res) => {
     try {
+        console.log(req.body);
         const {username, password} = req.body;
-
-        const user = await UserModel.findOne({username, password}).lean();
+        console.log(username, password);
+        const user = await UserModel.findOne({username, password}, "username").lean();
         if (!user) {
             res.status(401).send("User not found!");
         }
-        res.status(200).send(user);
+        console.log(user);
+        res.status(200).send({
+            username: user.username
+        });
     }
     catch (error) {
         res.status(500).send(error);

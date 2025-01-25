@@ -8,7 +8,7 @@ const NavigationBar = () => {
     const navigate = useNavigate();
 
     const [open, setOpen] = useState(false);
-    const [user, setUser] = useState({});
+    const [username, setUsername] = useState(null);
 
     const handleToggleOpen = () => {
         if (open) {
@@ -41,7 +41,7 @@ const NavigationBar = () => {
                     }}
                     onClick={() => handleToggleOpen()}
                 >
-                    {user ? `Welcome, ${user.username}` : 'Login'}
+                    {username ? `Welcome, ${username}` : 'Login'}
                 </Button>
 
                 {/* Centered Title */}
@@ -67,7 +67,7 @@ const NavigationBar = () => {
                 }}
                 >
                     <Login
-                        setUser = {setUser}
+                        setUser = {setUsername}
                         handleToggleOpen={handleToggleOpen}
                     />
                 </DialogContent>

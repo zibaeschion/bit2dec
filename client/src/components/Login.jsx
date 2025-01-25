@@ -26,9 +26,10 @@ const Login = ({ setUser, handleToggleOpen }) => {
             signUp(username, password);
             handleCancel();
         } else {
-            console.log("Logging in with:", {username, password});
-            setUser(signIn(username, password));
-            console.log("Logged in")
+            const user = signIn(username, password);
+            setUser(user.username);
+            console.log(user);
+            handleCancel()
         }
     };
 
