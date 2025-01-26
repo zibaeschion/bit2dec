@@ -38,7 +38,7 @@ Leaderboard
 ![Image](https://github.com/user-attachments/assets/64f41878-445b-442b-8bea-9a5913dd7c16)
 
 - Frontend: React, MaterielUI, Vite, Axios
-- Backend: Node.js, Express.js, Cors
+- Backend: Node.js, Express.js, Cors, Bycript
 - Database: MongoDB, Mongoose
 - Others: Prettier
 
