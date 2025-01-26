@@ -24,18 +24,30 @@ const Login = ({ setUser, handleToggleOpen }) => {
     };
 
     // Handle form submission for either login or signup
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (isSignUp) {
-            signUp(username, password); // SignUp request
-            handleCancel();
-        } else {
-            signIn(username, password) // SignIn request
-                .then((result) => {
-                    setUser(result.username);
-                    handleCancel();
-                })
-                .catch((err) => console.log(err));
+
+        try {
+            if (isSignUp) {
+                // Attempt to sign up
+                await signUp(username, password);
+                alert("Sign-up successful! You can now log in.");
+                handleCancel();
+            } else {
+                // Attempt to sign in
+                const result = await signIn(username, password);
+                setUser(result.username); // Assuming the backend sends { username }
+                handleCancel();
+            }
+        } catch (err) {
+            console.error(err);
+
+            // Show appropriate error messages
+            if (isSignUp) {
+                alert("Sign-up failed. Username might already exist.");
+            } else {
+                alert("Login failed. Check username and password.");
+            }
         }
     };
 

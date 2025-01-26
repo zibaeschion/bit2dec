@@ -4,7 +4,18 @@ import axios from 'axios';
 export async function signUp(username, password) {
     axios
         .post('https://bit2dec.onrender.com/user/register', { username, password })
-        .then((result) => {})
+        .catch((err) => {
+            console.log(err.message);
+            throw err;
+        });
+}
+
+// Function to sign in a user by sending their username and password to the backend
+export async function signIn(username, password) {
+    console.log(username, password);
+    return await axios
+        .post('https://bit2dec.onrender.com/user/signIn', { username, password })
+        .then((result) => result.data)
         .catch((err) => console.log(err.message));
 }
 
@@ -47,15 +58,6 @@ export async function updateHighScoreEight(username, newHighScoreEight) {
             newHighScoreEight,
         })
         .then((result) => {})
-        .catch((err) => console.log(err.message));
-}
-
-// Function to sign in a user by sending their username and password to the backend
-export async function signIn(username, password) {
-    console.log(username, password);
-    return await axios
-        .post('https://bit2dec.onrender.com/user/signIn', { username, password })
-        .then((result) => result.data)
         .catch((err) => console.log(err.message));
 }
 
