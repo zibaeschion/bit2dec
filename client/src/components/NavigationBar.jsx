@@ -58,8 +58,15 @@ const NavigationBar = () => {
                 {/*<Typography variant="h6" sx={{ flexGrow: 1, textAlign: 'center' }}>*/}
                 {/*    Bit2Dec*/}
                 {/*</Typography>*/}
-                <Box sx={{ flexGrow: 1, textAlign: 'center' }}>
-                    <img src={logo} alt={'bit2dec'} height="60" />
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        left: '50%',
+                        top: '50%',
+                        transform: 'translate(-50%, -50%)'
+                    }}
+                >
+                    <img src={logo} alt="bit2dec" height="60" />
                 </Box>
                 {/* Additional navigation options can be added here */}
             </Toolbar>
