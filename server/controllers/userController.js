@@ -1,9 +1,12 @@
 import UserModel from "../models/user.js";
+import {hashPassword} from "./supportFunctions.js"
+import bcrypt from "bcrypt";
 
 // Registers a new user with the provided username and password, saving them to the database.
 const register = async (req, res) => {
     const { username, password } = req.body;
-    const doc = new UserModel({ username: username, password: password });
+    const hashedPassword = await hashPassword(password);
+    const doc = new UserModel({ username: username, password: hashedPassword });
     await doc
         .save()
         .then(() => res.status(200).send('Registration successfully!'))
@@ -14,11 +17,19 @@ const register = async (req, res) => {
 const signIn = async (req, res) => {
     try {
         const { username, password } = req.body;
-        const user = await UserModel.findOne(
-            { username, password },
-            'username'
-        ).lean();
-        if (!user) return res.status(401).send('User not found!');
+
+        // Find the user by username
+        const user = await UserModel.findOne({ username }).lean();
+        if (!user) {
+            return res.status(401).send('User not found!');
+        }
+
+        // Compare the provided password with the stored hashed password
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(401).send('Invalid credentials!');
+        }
+
         res.status(200).send({ username: user.username });
     } catch (error) {
         res.status(500).send(error);

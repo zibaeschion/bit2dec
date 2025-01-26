@@ -40,7 +40,7 @@ const TimeMode = () => {
     const [incorrectClicks, setIncorrectClicks] = useState(0);
     const [score, setScore] = useState(0);
 
-    const initialTime = 5; // Initial countdown time in seconds
+    const initialTime = 120; // Initial countdown time in seconds
 
     // Initialize and manage the game timer using a custom hook
     const { time, setTimer } = useTimer(
