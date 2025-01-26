@@ -88,15 +88,6 @@ const Login = ({ setUser, handleToggleOpen }) => {
                                 Create Account
                             </Link>
                         )}
-
-                        {/* Forgot password link */}
-                        <Link
-                            href="#"
-                            variant="body2"
-                            className={'loginElement'}
-                        >
-                            Forgot Password?
-                        </Link>
                     </Box>
 
                     {/* Submit button */}
