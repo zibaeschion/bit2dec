@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Button} from '@mui/material';
-import {useNavigate} from "react-router-dom";
+import { Box, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -25,14 +25,14 @@ const Home = () => {
             <Button
                 variant="contained"
                 sx={{ width: '200px', height: '60px', fontSize: '1.5rem' }}
-                onClick={() => navigate("/tutorial")}
+                onClick={() => navigate('/tutorial')}
             >
                 TUTORIAL
             </Button>
             <Button
                 variant="contained"
                 sx={{ width: '200px', height: '60px', fontSize: '1.5rem' }}
-                onClick={() => navigate("/leaderboard")}
+                onClick={() => navigate('/leaderboard')}
             >
                 Leaderboard
             </Button>

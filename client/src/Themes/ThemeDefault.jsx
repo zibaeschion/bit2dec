@@ -8,31 +8,32 @@ const theme = createTheme({
                 root: {
                     backgroundColor: '#555',
                     borderRadius: 20,
-                    "& .MuiOutlinedInput-root": {
+                    '& .MuiOutlinedInput-root': {
                         borderRadius: 20,
-                        "& fieldset": {
-                            borderColor: "transparent",
+                        '& fieldset': {
+                            borderColor: 'transparent',
                             borderRadius: 20,
                         },
-                        "&:hover fieldset": {
-                            borderColor: "#777",
+                        '&:hover fieldset': {
+                            borderColor: '#777',
                         },
-                        "&.Mui-focused fieldset": {
-                            borderColor: "#999",
+                        '&.Mui-focused fieldset': {
+                            borderColor: '#999',
                         },
                     },
-                    "& .MuiInputLabel-root": {
-                        color: "#777",
+                    '& .MuiInputLabel-root': {
+                        color: '#777',
                     },
-                    "& .MuiInputLabel-root.Mui-focused": {
-                        color: "#999",
+                    '& .MuiInputLabel-root.Mui-focused': {
+                        color: '#999',
                     },
-                    "& .MuiInputBase-input": {
-                        color: "#333",
+                    '& .MuiInputBase-input': {
+                        color: '#333',
                     },
-                    "& .MuiOutlinedInput-root.Mui-focused .MuiInputBase-input": {
-                        color: "#999",
-                    },
+                    '& .MuiOutlinedInput-root.Mui-focused .MuiInputBase-input':
+                        {
+                            color: '#999',
+                        },
                 },
             },
         },

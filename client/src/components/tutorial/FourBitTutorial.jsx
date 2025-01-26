@@ -1,10 +1,10 @@
-import useClassicSettings from "../hooks/useClassicSettings.jsx";
-import {Fragment, useEffect} from "react";
-import RandomSelection from "../functions/GameModeFunctions/General/RandomSelection.jsx";
-import generateRandomNumbersClassic from "../functions/GameModeFunctions/Classic/ClassicRandomNumberGenerator.jsx";
-import AnswerChecker from "../functions/GameModeFunctions/General/checkAnswer.jsx";
-import TutorialGameModeLayout from "./TutorialGameModeLayout.jsx";
-import {Typography} from "@mui/material";
+import useClassicSettings from '../hooks/useClassicSettings.jsx';
+import { Fragment, useEffect } from 'react';
+import RandomSelection from '../functions/GameModeFunctions/General/RandomSelection.jsx';
+import generateRandomNumbersClassic from '../functions/GameModeFunctions/Classic/ClassicRandomNumberGenerator.jsx';
+import AnswerChecker from '../functions/GameModeFunctions/General/checkAnswer.jsx';
+import TutorialGameModeLayout from './TutorialGameModeLayout.jsx';
+import { Typography } from '@mui/material';
 
 export default function FourBitTutorial() {
     const {
@@ -37,7 +37,11 @@ export default function FourBitTutorial() {
 
     // Generate random numbers and update state
     const generateRandomNumbers = () => {
-        generateRandomNumbersClassic(bitLength, setRandomNumbers, setRandomBinaryNumbers);
+        generateRandomNumbersClassic(
+            bitLength,
+            setRandomNumbers,
+            setRandomBinaryNumbers
+        );
     };
 
     // Generate a random selection of numbers and update state
@@ -83,5 +87,5 @@ export default function FourBitTutorial() {
             showNextButton={showNextButton}
             handleNextClick={handleNextClick}
         />
-    )
+    );
 }

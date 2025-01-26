@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import generateRandomNumbersClassic from "../functions/GameModeFunctions/Classic/ClassicRandomNumberGenerator.jsx";
-import checkAnswerTimeMode from "../functions/GameModeFunctions/TimeMode/CheckAnswerTimeMode.jsx";
-import TimeModeLayout from "../functions/GameModeFunctions/Layouts/TimeModeLayout.jsx";
-import useClassicSettings from "../hooks/useClassicSettings.jsx";
-import useTimer from "../hooks/useTimer.jsx";
-import RandomSelection from "../functions/GameModeFunctions/General/RandomSelection.jsx";
+import generateRandomNumbersClassic from '../functions/GameModeFunctions/Classic/ClassicRandomNumberGenerator.jsx';
+import checkAnswerTimeMode from '../functions/GameModeFunctions/TimeMode/CheckAnswerTimeMode.jsx';
+import TimeModeLayout from '../functions/GameModeFunctions/Layouts/TimeModeLayout.jsx';
+import useClassicSettings from '../hooks/useClassicSettings.jsx';
+import useTimer from '../hooks/useTimer.jsx';
+import RandomSelection from '../functions/GameModeFunctions/General/RandomSelection.jsx';
+import { useUser } from '../UserContext';
 
-const TimeMode = (user) => {
+const TimeMode = () => {
     // Retrieve game state and settings using custom hook
     const {
         bitLength,
@@ -30,7 +31,7 @@ const TimeMode = (user) => {
         correctAnswer,
     } = useClassicSettings();
 
-    const username = user;  // Set a static username
+    const { username } = useUser(); // Set a static username
 
     // Local state variables for tracking game progress
     const [showRestartButton, setShowRestartButton] = useState(false);
@@ -38,7 +39,7 @@ const TimeMode = (user) => {
     const [incorrectClicks, setIncorrectClicks] = useState(0);
     const [score, setScore] = useState(0);
 
-    const initialTime = 120;  // Initial countdown time in seconds
+    const initialTime = 5; // Initial countdown time in seconds
 
     // Initialize and manage the game timer using a custom hook
     const { time, setTimer } = useTimer(
@@ -64,7 +65,11 @@ const TimeMode = (user) => {
 
     // Function to generate random numbers and update state
     const generateRandomNumbers = () => {
-        generateRandomNumbersClassic(bitLength, setRandomNumbers, setRandomBinaryNumbers);
+        generateRandomNumbersClassic(
+            bitLength,
+            setRandomNumbers,
+            setRandomBinaryNumbers
+        );
     };
 
     // Function to generate a random selection of numbers and update state

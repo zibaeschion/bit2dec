@@ -1,11 +1,12 @@
-import {useParams} from "react-router-dom";
-import {useState} from "react";
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 const useMathsSettings = () => {
-    const {id} = useParams();
+    const { id } = useParams();
     const bitLength = parseInt(id, 10);
 
-    const answerNumber = bitLength >= 12 ? bitLength + 3: Math.round((0.75 * bitLength + 6));
+    const answerNumber =
+        bitLength >= 12 ? bitLength + 3 : Math.round(0.75 * bitLength + 6);
 
     const [randomNumbers, setRandomNumbers] = useState([]);
     const [randomBinaryNumbers, setRandomBinaryNumbers] = useState([]);
@@ -20,7 +21,6 @@ const useMathsSettings = () => {
     const [gameOver, setGameOver] = useState(false);
     const [disabledButtons, setDisabledButtons] = useState([]);
     const [showNextButton, setShowNextButton] = useState(false);
-
 
     return {
         bitLength,

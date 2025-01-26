@@ -1,14 +1,24 @@
-import React, {useState} from 'react';
-import {AppBar, Toolbar, Typography, Button, Dialog, DialogContent, Icon, Box} from '@mui/material';
-import {useNavigate} from "react-router-dom";
-import Login from "./Login.jsx";
-import logo from "../assets/bit2dec.png";
+import React, { useState } from 'react';
+import {
+    AppBar,
+    Toolbar,
+    Typography,
+    Button,
+    Dialog,
+    DialogContent,
+    Icon,
+    Box,
+} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import Login from './Login.jsx';
+import logo from '../assets/bit2dec.png';
+import { useUser } from './UserContext';
 
 const NavigationBar = () => {
     const navigate = useNavigate();
-
+    const { username, setUsername } = useUser();
     const [open, setOpen] = useState(false);
-    const [username, setUsername] = useState(null);
+    //const [username, setUsername] = useState(null);
 
     const handleToggleOpen = () => {
         if (open) {
@@ -19,7 +29,7 @@ const NavigationBar = () => {
     };
 
     return (
-        <AppBar position="static" sx={{backgroundColor: '#333333',}}>
+        <AppBar position="static" sx={{ backgroundColor: '#333333' }}>
             <Toolbar>
                 {/* Home Button */}
                 <Button
@@ -48,32 +58,37 @@ const NavigationBar = () => {
                 {/*<Typography variant="h6" sx={{ flexGrow: 1, textAlign: 'center' }}>*/}
                 {/*    Bit2Dec*/}
                 {/*</Typography>*/}
-                <Box sx={{flexGrow: 1, textAlign: 'center'}}>
-                    <img src={logo} alt={"bit2dec"} height="60"/>
+                <Box sx={{ flexGrow: 1, textAlign: 'center' }}>
+                    <img src={logo} alt={'bit2dec'} height="60" />
                 </Box>
                 {/* Additional navigation options can be added here */}
             </Toolbar>
-            <Dialog open={open} onClose={handleToggleOpen} maxWidth="sm"
-                    PaperProps={{
-                        sx:{backgroundColor: 'transparent',
-                            backgroundBlendMode: "hue",
-                            boxShadow: 'none',
-                        }}}
+            <Dialog
+                open={open}
+                onClose={handleToggleOpen}
+                maxWidth="sm"
+                PaperProps={{
+                    sx: {
+                        backgroundColor: 'transparent',
+                        backgroundBlendMode: 'hue',
+                        boxShadow: 'none',
+                    },
+                }}
             >
                 <DialogContent
-                    sx={{padding: '20px',
+                    sx={{
+                        padding: '20px',
                         backgroundColor: '#333',
                         borderRadius: '20px',
-                }}
+                    }}
                 >
                     <Login
-                        setUser = {setUsername}
+                        setUser={setUsername}
                         handleToggleOpen={handleToggleOpen}
                     />
                 </DialogContent>
             </Dialog>
         </AppBar>
-
     );
 };
 

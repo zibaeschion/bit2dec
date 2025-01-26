@@ -7,7 +7,8 @@ const useClassicSettings = () => {
     const bitLength = parseInt(id, 10);
 
     // Calculate the number of buttons based on the bitLength
-    const numberOfButtons = bitLength >= 12 ? bitLength + 4 : Math.round((0.75 * bitLength + 6));
+    const numberOfButtons =
+        bitLength >= 12 ? bitLength + 4 : Math.round(0.75 * bitLength + 6);
 
     // Initialize state variables for random numbers and binary numbers
     const [randomNumbers, setRandomNumbers] = useState([]);

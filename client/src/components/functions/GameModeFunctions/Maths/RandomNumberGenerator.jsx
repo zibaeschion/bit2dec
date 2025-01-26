@@ -1,7 +1,7 @@
-import RandomAnswerGenerator from "./RandomAnswerGenerator.jsx";
-import convertIntoSpaced from "../General/convertIntoSpaced.jsx";
-import toBinaryString from "../General/toBinaryString.jsx";
-import generateRandomBitBinary from "../General/generateRandomBitBinary.jsx";
+import RandomAnswerGenerator from './RandomAnswerGenerator.jsx';
+import convertIntoSpaced from '../General/convertIntoSpaced.jsx';
+import toBinaryString from '../General/toBinaryString.jsx';
+import generateRandomBitBinary from '../General/generateRandomBitBinary.jsx';
 
 const RandomNumberGenerator = (
     answerNumber,
@@ -9,9 +9,8 @@ const RandomNumberGenerator = (
     setRandomBinaryNumbers,
     setRandomNumbers,
     setCorrectAnswer,
-    setCorrectBinaryAnswer,
+    setCorrectBinaryAnswer
 ) => {
-
     let numbers = [];
     let binaryNumbers = [];
     let sum = 0;
@@ -25,7 +24,6 @@ const RandomNumberGenerator = (
 
         // avoids addition of two same numbers
         if (!numbers.includes(randomNumber)) {
-
             numbers.push(randomNumber);
 
             let spacedBinary = convertIntoSpaced(randomNumber, bitLength);
@@ -57,4 +55,4 @@ const RandomNumberGenerator = (
     setRandomBinaryNumbers([...binaryNumbers]);
     setRandomNumbers([sum, ...answerNumbers]);
 };
-export default RandomNumberGenerator
+export default RandomNumberGenerator;

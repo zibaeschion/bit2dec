@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import generateRandomNumbersClassic from "../functions/GameModeFunctions/Classic/ClassicRandomNumberGenerator.jsx";
-import AnswerChecker from "../functions/GameModeFunctions/General/checkAnswer.jsx";
-import ClassicGameModeLayout from "../functions/GameModeFunctions/Layouts/ClassicGameModeLayout.jsx";
-import useClassicSettings from "../hooks/useClassicSettings.jsx";
-import RandomSelection from "../functions/GameModeFunctions/General/RandomSelection.jsx";
+import generateRandomNumbersClassic from '../functions/GameModeFunctions/Classic/ClassicRandomNumberGenerator.jsx';
+import AnswerChecker from '../functions/GameModeFunctions/General/checkAnswer.jsx';
+import ClassicGameModeLayout from '../functions/GameModeFunctions/Layouts/ClassicGameModeLayout.jsx';
+import useClassicSettings from '../hooks/useClassicSettings.jsx';
+import RandomSelection from '../functions/GameModeFunctions/General/RandomSelection.jsx';
 
 const ClassicMode = () => {
     // Retrieve game state and settings using custom hook
@@ -37,7 +37,11 @@ const ClassicMode = () => {
 
     // Generate random numbers and update state
     const generateRandomNumbers = () => {
-        generateRandomNumbersClassic(bitLength, setRandomNumbers, setRandomBinaryNumbers);
+        generateRandomNumbersClassic(
+            bitLength,
+            setRandomNumbers,
+            setRandomBinaryNumbers
+        );
     };
 
     // Generate a random selection of numbers and update state

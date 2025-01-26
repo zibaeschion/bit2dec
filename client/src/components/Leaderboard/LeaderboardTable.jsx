@@ -1,4 +1,10 @@
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow,
+} from '@mui/material';
 
 const LeaderboardTable = ({ data }) => {
     return (
@@ -13,9 +19,15 @@ const LeaderboardTable = ({ data }) => {
             <TableBody>
                 {data.map((entry, index) => (
                     <TableRow key={`${entry.accountName}-${index}`}>
-                        <TableCell className="table-body-cell">{index + 1}</TableCell>
-                        <TableCell className="table-body-cell">{entry.accountName}</TableCell>
-                        <TableCell className="table-body-cell">{entry.points}</TableCell>
+                        <TableCell className="table-body-cell">
+                            {index + 1}
+                        </TableCell>
+                        <TableCell className="table-body-cell">
+                            {entry.accountName}
+                        </TableCell>
+                        <TableCell className="table-body-cell">
+                            {entry.points}
+                        </TableCell>
                     </TableRow>
                 ))}
             </TableBody>

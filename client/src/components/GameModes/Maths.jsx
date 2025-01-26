@@ -1,9 +1,9 @@
-import {useEffect} from 'react';
-import RandomNumberGenerator from "../functions/GameModeFunctions/Maths/RandomNumberGenerator.jsx";
-import AnswerChecker from "../functions/GameModeFunctions/General/checkAnswer.jsx";
-import MathsGameModeLayout from "../functions/GameModeFunctions/Layouts/MathsGameModeLayout.jsx";
-import useMathsSettings from "../hooks/useMathsSettings.jsx";
-import RandomSelection from "../functions/GameModeFunctions/General/RandomSelection.jsx";
+import { useEffect } from 'react';
+import RandomNumberGenerator from '../functions/GameModeFunctions/Maths/RandomNumberGenerator.jsx';
+import AnswerChecker from '../functions/GameModeFunctions/General/checkAnswer.jsx';
+import MathsGameModeLayout from '../functions/GameModeFunctions/Layouts/MathsGameModeLayout.jsx';
+import useMathsSettings from '../hooks/useMathsSettings.jsx';
+import RandomSelection from '../functions/GameModeFunctions/General/RandomSelection.jsx';
 
 const Maths = () => {
     const {
@@ -29,7 +29,7 @@ const Maths = () => {
         setCorrectAnswer,
         correctBinaryAnswer,
         setCorrectBinaryAnswer,
-            } = useMathsSettings();
+    } = useMathsSettings();
 
     // generates the Numbers for the quiz as well as shuffles them when entering the site
     useEffect(() => {
@@ -45,17 +45,14 @@ const Maths = () => {
             setRandomBinaryNumbers,
             setRandomNumbers,
             setCorrectAnswer,
-            setCorrectBinaryAnswer,
+            setCorrectBinaryAnswer
         );
-    }
+    };
 
     // fills in the needed constants as props
     const generateSelection = () => {
-        RandomSelection(
-            answerNumber,
-            setSelectedRandomSelection
-        );
-    }
+        RandomSelection(answerNumber, setSelectedRandomSelection);
+    };
 
     // check if the answer is correct
     const checkAnswer = (answer) => {
@@ -69,7 +66,7 @@ const Maths = () => {
             setGameOver,
             setDisabledButtons,
             setShowNextButton
-        )
+        );
     };
 
     // sets everything to the default values and generates new Numbers and shuffles them
@@ -86,8 +83,8 @@ const Maths = () => {
     // if the creation of the binaryAnswer should take too long it renderns a "Loading..." as the MathsGameModeLayout
     // needs it. Without this statement we would get an error as it tries to render the site at the same time as it tries
     // to calculate the correctBinaryAnswer
-    if (!correctBinaryAnswer){
-        return <div>Loading...</div>
+    if (!correctBinaryAnswer) {
+        return <div>Loading...</div>;
     }
 
     // renders the website; and hands over the correct props
@@ -103,7 +100,7 @@ const Maths = () => {
             checkAnswer={checkAnswer}
             showNextButton={showNextButton}
             handleNextClick={handleNextClick}
-            correctAnswer = {correctAnswer}
+            correctAnswer={correctAnswer}
         />
     );
 };

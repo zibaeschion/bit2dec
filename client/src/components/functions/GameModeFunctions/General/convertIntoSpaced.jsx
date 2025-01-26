@@ -1,10 +1,6 @@
-import toBinaryString from "./toBinaryString.jsx";
+import toBinaryString from './toBinaryString.jsx';
 
-const convertIntoSpaced = (
-        num,
-        bitLength
-) =>{
-
+const convertIntoSpaced = (num, bitLength) => {
     let binaryString = toBinaryString(num, bitLength);
 
     // approves that the binaryString is dividable by 4; and if not adds zeros in the beginning til it is
@@ -16,5 +12,5 @@ const convertIntoSpaced = (
     binaryString = binaryString.replace(/(.{4})(?=.)/g, '$1 ');
 
     return binaryString;
-}
-export default convertIntoSpaced
+};
+export default convertIntoSpaced;

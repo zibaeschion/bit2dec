@@ -1,5 +1,14 @@
-import { Box, Button, Collapse, Grid2, Stack, Switch, Typography, useMediaQuery } from "@mui/material";
-import React, { Fragment, useEffect, useState } from "react";
+import {
+    Box,
+    Button,
+    Collapse,
+    Grid2,
+    Stack,
+    Switch,
+    Typography,
+    useMediaQuery,
+} from '@mui/material';
+import React, { Fragment, useEffect, useState } from 'react';
 
 export default function ClassicGameModeLayout(props) {
     const {
@@ -28,18 +37,20 @@ export default function ClassicGameModeLayout(props) {
     const revealSolution = (rowIndex) => {
         if (rowIndex < rowRevealed.length) {
             const timeout = rowIndex === 0 ? 200 : 5000;
-            setProcessRevealed(setTimeout(() => {
-                const newRevealed = [false, false];
-                if (solutionShown) {
-                    for (let i = 0; i <= rowIndex; i++) {
-                        newRevealed[i] = true;
+            setProcessRevealed(
+                setTimeout(() => {
+                    const newRevealed = [false, false];
+                    if (solutionShown) {
+                        for (let i = 0; i <= rowIndex; i++) {
+                            newRevealed[i] = true;
+                        }
+                        setRowRevealed(newRevealed);
+                        revealSolution(rowIndex + 1);
+                    } else {
+                        setRowRevealed(newRevealed);
                     }
-                    setRowRevealed(newRevealed);
-                    revealSolution(rowIndex + 1);
-                } else {
-                    setRowRevealed(newRevealed);
-                }
-            }, timeout));
+                }, timeout)
+            );
         }
     };
 
@@ -63,39 +74,57 @@ export default function ClassicGameModeLayout(props) {
     }, [showNextButton]);
 
     return (
-        <Box className={"gameContainer"}>
-            <Typography variant="h4" className={"gameMessage"}>
+        <Box className={'gameContainer'}>
+            <Typography variant="h4" className={'gameMessage'}>
                 {isCorrect ? 'Correct!' : 'Which number is the correct result?'}
             </Typography>
 
             {/* Hint section */}
             <Collapse in={helpNeeded}>
-                <Stack spacing={0} className={"mathsStack"}>
+                <Stack spacing={0} className={'mathsStack'}>
                     <Typography variant="body1"> Hints </Typography>
-                    <Switch checked={solutionShown} disabled={!rowRevealed[3] && solutionShown}
-                            onClick={() => setSolutionShown(!solutionShown)}></Switch>
+                    <Switch
+                        checked={solutionShown}
+                        disabled={!rowRevealed[3] && solutionShown}
+                        onClick={() => setSolutionShown(!solutionShown)}
+                    ></Switch>
                 </Stack>
             </Collapse>
 
             {/* Display binary calculation steps */}
-            <Grid2 columns={12} container spacing={0} width={solutionShown ? "70%" : "40%"}>
-                <Grid2 size={1}/>
+            <Grid2
+                columns={12}
+                container
+                spacing={0}
+                width={solutionShown ? '70%' : '40%'}
+            >
+                <Grid2 size={1} />
                 <Grid2 size={11}>
-                        <Typography variant="h4" className={"mathsHintGridTypo"} color={yellow}>
-                            {`${randomBinaryNumbers[0]}`}
-                        </Typography>
+                    <Typography
+                        variant="h4"
+                        className={'mathsHintGridTypo'}
+                        color={yellow}
+                    >
+                        {`${randomBinaryNumbers[0]}`}
+                    </Typography>
                 </Grid2>
 
                 <Grid2 size={!rowRevealed[0] ? 1 : 0}>
                     <Collapse in={!rowRevealed[0]}>
-                        <Typography variant="h4" className={"mathsHintGridTypo"}>
+                        <Typography
+                            variant="h4"
+                            className={'mathsHintGridTypo'}
+                        >
                             =
                         </Typography>
                     </Collapse>
                 </Grid2>
                 <Grid2 size={!rowRevealed[0] ? 11 : 0}>
                     <Collapse in={!rowRevealed[0]}>
-                        <Typography variant="h4" className={"mathsHintGridTypo"}>
+                        <Typography
+                            variant="h4"
+                            className={'mathsHintGridTypo'}
+                        >
                             {isCorrect ? `${randomNumbers[0]}` : `?`}
                         </Typography>
                     </Collapse>
@@ -104,49 +133,81 @@ export default function ClassicGameModeLayout(props) {
                 {/* Equality sign */}
                 <Grid2 size={1}>
                     <Collapse in={rowRevealed[0]}>
-                        <Typography variant="h4" className={"mathsHintGridTypo"}>
+                        <Typography
+                            variant="h4"
+                            className={'mathsHintGridTypo'}
+                        >
                             =
                         </Typography>
                     </Collapse>
                 </Grid2>
 
                 {/* Display calculation steps for binary conversion */}
-                {randomBinaryNumbers[0] && Array.from(randomBinaryNumbers[0].replace(/\s/g, '')).map((bit, bitIndex) => {
-                    const bitPower = randomBinaryNumbers[0].replace(/\s/g, '').length - 1 - bitIndex;
-                    const result = bit === "1" ? Math.pow(2, bitPower) : 0;
+                {randomBinaryNumbers[0] &&
+                    Array.from(randomBinaryNumbers[0].replace(/\s/g, '')).map(
+                        (bit, bitIndex) => {
+                            const bitPower =
+                                randomBinaryNumbers[0].replace(/\s/g, '')
+                                    .length -
+                                1 -
+                                bitIndex;
+                            const result =
+                                bit === '1' ? Math.pow(2, bitPower) : 0;
 
-                    return (
-                        <Fragment key={`result-${bitIndex}`}>
-                            {/* Display calculated value */}
-                            <Grid2 size={solutionShown ? 2 : 11}>
-                                <Collapse in={rowRevealed[0]}>
-                                    <Typography variant="h4" className={"mathsHintGridTypo"}>
-                                        {`${result}`}
-                                    </Typography>
-                                </Collapse>
-                            </Grid2>
+                            return (
+                                <Fragment key={`result-${bitIndex}`}>
+                                    {/* Display calculated value */}
+                                    <Grid2 size={solutionShown ? 2 : 11}>
+                                        <Collapse in={rowRevealed[0]}>
+                                            <Typography
+                                                variant="h4"
+                                                className={'mathsHintGridTypo'}
+                                            >
+                                                {`${result}`}
+                                            </Typography>
+                                        </Collapse>
+                                    </Grid2>
 
-                            {/* Show plus signs between values */}
-                            {bitIndex < randomBinaryNumbers[0].replace(/\s/g, '').length - 1 && (
-                                <Grid2 size={1}>
-                                    <Collapse in={rowRevealed[0]}>
-                                        <Typography variant="h4" className={"mathsHintGridTypo"}>
-                                            +
-                                        </Typography>
-                                    </Collapse>
-                                </Grid2>
-                            )}
-                        </Fragment>
-                    );
-                })}
+                                    {/* Show plus signs between values */}
+                                    {bitIndex <
+                                        randomBinaryNumbers[0].replace(
+                                            /\s/g,
+                                            ''
+                                        ).length -
+                                            1 && (
+                                        <Grid2 size={1}>
+                                            <Collapse in={rowRevealed[0]}>
+                                                <Typography
+                                                    variant="h4"
+                                                    className={
+                                                        'mathsHintGridTypo'
+                                                    }
+                                                >
+                                                    +
+                                                </Typography>
+                                            </Collapse>
+                                        </Grid2>
+                                    )}
+                                </Fragment>
+                            );
+                        }
+                    )}
             </Grid2>
             {/* a new grid with the same setting as the one above; needed to separate the solution one line under all
             the decimals creating a nicer visual */}
-            <Grid2 columns={12} container spacing={0} width={solutionShown ? "70%" : "40%"}>
+            <Grid2
+                columns={12}
+                container
+                spacing={0}
+                width={solutionShown ? '70%' : '40%'}
+            >
                 {/* Equality sign */}
                 <Grid2 size={1}>
                     <Collapse in={rowRevealed[1]}>
-                        <Typography variant="h4" className={"mathsHintGridTypo"}>
+                        <Typography
+                            variant="h4"
+                            className={'mathsHintGridTypo'}
+                        >
                             =
                         </Typography>
                     </Collapse>
@@ -155,7 +216,10 @@ export default function ClassicGameModeLayout(props) {
                 {/* the solution but as decimal */}
                 <Grid2 size={11}>
                     <Collapse in={rowRevealed[1]}>
-                        <Typography variant="h4" className={"mathsHintGridTypo"}>
+                        <Typography
+                            variant="h4"
+                            className={'mathsHintGridTypo'}
+                        >
                             {randomNumbers[0]}
                         </Typography>
                     </Collapse>
@@ -163,7 +227,7 @@ export default function ClassicGameModeLayout(props) {
             </Grid2>
 
             {/* Answer selection buttons */}
-            <Box className={"gameButtonsContainer"}>
+            <Box className={'gameButtonsContainer'}>
                 {randomSelection.map((index) => {
                     const currentNumber = randomNumbers[index];
                     const isSelected = selectedAnswer === currentNumber;
@@ -172,7 +236,7 @@ export default function ClassicGameModeLayout(props) {
                         <Button
                             key={index}
                             className={`gameButton 
-                            ${isSelected ? (isCorrect ? 'selected correct' : 'selected incorrect') : (isDisabled ? 'disabled' : 'default')}`}
+                            ${isSelected ? (isCorrect ? 'selected correct' : 'selected incorrect') : isDisabled ? 'disabled' : 'default'}`}
                             onClick={() => handleAnswerCheck(currentNumber)}
                             disabled={isDisabled}
                         >

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FormatTime from '../functions/GameModeFunctions/TimeMode/FormatTime.jsx';
-import { updateHighScoreTimeFour } from "../functions/GameModeFunctions/TimeMode/UpdateHighScoreTimeFour.jsx";
-import { updateHighScoreTimeEight } from "../functions/GameModeFunctions/TimeMode/UpdateHighScoreTimeEight.jsx";
+import { updateHighScoreTimeFour } from '../functions/GameModeFunctions/TimeMode/UpdateHighScoreTimeFour.jsx';
+import { updateHighScoreTimeEight } from '../functions/GameModeFunctions/TimeMode/UpdateHighScoreTimeEight.jsx';
 
 // Custom hook for handling game timer and related actions
 const useTimer = (
@@ -39,10 +39,12 @@ const useTimer = (
             setShowRestartButton(true);
 
             // Update the high score based on the bitLength
-            if (bitLength === 4) {
-                updateHighScoreTimeFour(username, newScore);
-            } else {
-                updateHighScoreTimeEight(username, newScore);
+            if (username !== null) {
+                if (bitLength === 4) {
+                    updateHighScoreTimeFour(username, newScore);
+                } else {
+                    updateHighScoreTimeEight(username, newScore);
+                }
             }
         }
     }, [timer]);

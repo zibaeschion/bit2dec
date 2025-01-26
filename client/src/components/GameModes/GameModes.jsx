@@ -1,8 +1,5 @@
-import {
-    Box,
-    Button
-} from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Box, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const GameModes = () => {
     const navigate = useNavigate();
@@ -30,9 +27,17 @@ const GameModes = () => {
                     sx={{ width: '200px', height: '60px', fontSize: '1.5rem' }}
                     onClick={() => navigate('/timeMode/4')}
                 >
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
                         <span>4-BIT</span>
-                        <span style={{ fontSize: '1rem', marginTop: '-4px' }}>TIME MODE</span>
+                        <span style={{ fontSize: '1rem', marginTop: '-4px' }}>
+                            TIME MODE
+                        </span>
                     </Box>
                 </Button>
             </Box>
@@ -50,9 +55,17 @@ const GameModes = () => {
                     sx={{ width: '200px', height: '60px', fontSize: '1.5rem' }}
                     onClick={() => navigate('/timeMode/8')}
                 >
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
                         <span>8-BIT</span>
-                        <span style={{ fontSize: '1rem', marginTop: '-4px' }}>TIME MODE</span>
+                        <span style={{ fontSize: '1rem', marginTop: '-4px' }}>
+                            TIME MODE
+                        </span>
                     </Box>
                 </Button>
             </Box>
@@ -75,6 +88,6 @@ const GameModes = () => {
             </Box>
         </Box>
     );
-}
+};
 
 export default GameModes;

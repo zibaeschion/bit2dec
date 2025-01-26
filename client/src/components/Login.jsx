@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { Box, TextField, Button, Typography, Link } from "@mui/material";
-import theme from "../Themes/ThemeDefault.jsx";
-import { ThemeProvider } from "@mui/material/styles";
-import PropTypes from "prop-types";
-import {signIn, signUp} from "./functions/APIFunctions.jsx";
+import { useState } from 'react';
+import { Box, TextField, Button, Typography, Link } from '@mui/material';
+import theme from '../Themes/ThemeDefault.jsx';
+import { ThemeProvider } from '@mui/material/styles';
+import PropTypes from 'prop-types';
+import { signIn, signUp } from './functions/APIFunctions.jsx';
 
 const Login = ({ setUser, handleToggleOpen }) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const [isSignUp, setIsSignUp] = useState(false);
 
     const handleCancel = () => {
-        setUsername("");
-        setPassword("");
+        setUsername('');
+        setPassword('');
         handleToggleOpen();
     };
 
@@ -27,16 +27,14 @@ const Login = ({ setUser, handleToggleOpen }) => {
             handleCancel();
         } else {
             signIn(username, password)
-                .then(result => {
+                .then((result) => {
                     console.log(result.username);
                     setUser(result.username);
                     handleCancel();
                 })
-                .catch(err => console.log(err));
-
+                .catch((err) => console.log(err));
         }
     };
-
 
     return (
         <ThemeProvider theme={theme}>
@@ -52,7 +50,7 @@ const Login = ({ setUser, handleToggleOpen }) => {
                     }}
                 >
                     <Typography variant="h4" gutterBottom>
-                        {isSignUp ? "Create Account" : "Login"}
+                        {isSignUp ? 'Create Account' : 'Login'}
                     </Typography>
 
                     {/* Common fields for both Login and SignUp */}
@@ -75,7 +73,12 @@ const Login = ({ setUser, handleToggleOpen }) => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
 
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                        }}
+                    >
                         {isSignUp ? (
                             <Link
                                 href="#"
@@ -111,7 +114,7 @@ const Login = ({ setUser, handleToggleOpen }) => {
                         color="white"
                         fullWidth
                     >
-                        {isSignUp ? "Sign Up" : "Log In"}
+                        {isSignUp ? 'Sign Up' : 'Log In'}
                     </Button>
 
                     <Button

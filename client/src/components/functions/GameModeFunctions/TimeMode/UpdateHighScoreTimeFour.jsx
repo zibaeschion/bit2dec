@@ -1,14 +1,12 @@
-import {getHighScoreFour, updateHighScoreFour} from "../../APIFunctions.jsx";
+import { getHighScoreFour, updateHighScoreFour } from '../../APIFunctions.jsx';
 
 export const updateHighScoreTimeFour = async (username, newScore) => {
     try {
         const currentHighScore = await getHighScoreFour(username);
-        (currentHighScore.highScoreFour < newScore)
+        currentHighScore.highScoreFour < newScore
             ? await updateHighScoreFour(username, newScore)
-            : "";
-
-    }
-    catch (err) {
+            : '';
+    } catch (err) {
         console.log(err.message);
     }
 };

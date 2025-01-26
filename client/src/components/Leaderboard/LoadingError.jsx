@@ -21,4 +21,3 @@ export const LoadingError = ({ isLoading, error }) => {
 
     return null;
 };
-
