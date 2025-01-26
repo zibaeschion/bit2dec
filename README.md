@@ -66,7 +66,10 @@ Download and install the following software:
 - Go to /client/src/components/functions/APIFunctions.jsx
 - In every function change the "https://[irgendein website link]" to "https://localhost:5173"
 - Open the Terminal
-- In the Server and Client directory run "npm install"
+- In the Server and Client directory run:
+```bash
+  npm install
+  ```
   ![Image](https://github.com/user-attachments/assets/41d0928b-b2f0-4829-96da-fbab58cb6fac)
   ![Image](https://github.com/user-attachments/assets/061a24dc-2fa2-49d3-940a-80139502b77d)
 - To start the Project in Webstorm follow the directions of the following pictures
@@ -89,7 +92,10 @@ Download and install the following software:
 - Go back to your code editor
 - Go to /client/src/components/functions/APIFunctions.jsx
 - In every function change from "https://localhost:5173" to the link "https://{projectName}.onrender.com"
-- Open the Terminal and in the client run "npm run build"
+- Open the Terminal and in the client run 
+```bash
+  npm run build
+  ```
 - Push the Project, including the complete dist directory in the client directory
 - Open [Render](https://render.com)
 - Create a Render account or log into yours
@@ -104,8 +110,14 @@ Download and install the following software:
 - Select the main branch in the branch field
 - Choose the closest server in the region field
 - In the root directory type server
-- In the build command field type: "server/ $ npm install"
-- In the start command field type: "server/ $ npm run start"
+- In the build command field type: 
+  ```bash
+  server/ $ npm install
+  ```
+- In the start command field type:
+  ```bash
+  server/ $ npm run start
+  ```
 - Add env variable:
     - Name: "MONGO_URI"
     - Content: "mongodb+srv://groupteewebtech:Sk5hE2WH67pawCaA@bit2dec.8lxju.mongodb.net/?retryWrites=true&w=majority&appName=bit2dec"
