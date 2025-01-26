@@ -54,6 +54,76 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* App */
+.appContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+/* App */
+
+/* Main Components */
+.mainContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-grow: 1 !important;
+    gap: 1rem !important;
+}
+
+.mainButton {
+    width: 200px !important;
+    height: 60px !important;
+    font-size: 1.5rem !important;
+}
+/* Main Components */
+
+/* NavBar */
+.navbarButtons {
+    color: white !important;
+    text-transform: none !important;
+}
+
+.navbarLogo {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.navbarDialog {
+    padding: 20px !important;
+    background-color: #333 !important;
+    border-radius: 20px !important;
+}
+/* NavBar */
+
+/* Login */
+.loginContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    background-color: #333 !important;
+    color: white !important;
+}
+
+.loginContainer2 {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.loginElement {
+    cursor: pointer !important;
+    color: white !important;
+}
+
+/* Login */
+
 /*Select*/
 .select-container {
     width: 200px !important;
@@ -183,40 +253,45 @@ button:focus-visible {
 /*Error*/
 
 /*GameModes*/
-.gameModeButton {
-    width: 200px;
-    height: 60px;
-    font-size: 1.5rem;
+.mainButtonContainer {
+    display: flex !important;
+    gap: 1rem !important;
+}
+
+.withinGameModeButton {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
 }
 
 .gameMessage {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
 }
 
 .gameTask {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
 }
 
 .gameAnswerCounter {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
 }
 
 .gameContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    gap: 1rem;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-grow: 1 !important;
+    gap: 1rem !important;
 }
 
 .gameButtonsContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    justify-items: center;
-    width: 100%;
-    max-width: 800px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+    justify-items: center !important;
+    width: 100% !important;
+    max-width: 800px !important;
 }
 
 .gameButton {

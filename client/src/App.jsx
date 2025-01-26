@@ -16,17 +16,11 @@ const App = () => {
     return (
         <UserProvider>
             <BrowserRouter>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'flex-start',
-                        alignItems: 'center',
-                        width: '100vw',
-                        height: '100vh',
-                    }}
-                >
+                <Box className={'appContainer'}>
+                    {/* Navigation Bar */}
                     <NavigationBar />
+
+                    {/* Routing to different pages */}
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/gamemodes" element={<GameModes />} />

@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Function to sign up a new user by sending their username and password to the backend
 export async function signUp(username, password) {
     axios
         .post('http://localhost:5050/user/register', { username, password })
@@ -7,6 +8,7 @@ export async function signUp(username, password) {
         .catch((err) => console.log(err.message));
 }
 
+// Function to get the high score for 4-Bit game mode for a specific user
 export async function getHighScoreFour(username) {
     return await axios
         .post('http://localhost:5050/user/getHighScoreFour/', { username })
@@ -16,6 +18,7 @@ export async function getHighScoreFour(username) {
         .catch((err) => console.log(err.message));
 }
 
+// Function to update the high score for 4-Bit game mode for a specific user
 export async function updateHighScoreFour(username, newHighScoreFour) {
     await axios
         .post('http://localhost:5050/user/updateHighScoreFour', {
@@ -26,6 +29,7 @@ export async function updateHighScoreFour(username, newHighScoreFour) {
         .catch((err) => console.log(err.message));
 }
 
+// Function to get the high score for 8-Bit game mode for a specific user
 export async function getHighScoreEight(username) {
     return await axios
         .post('http://localhost:5050/user/getHighScoreEight/', { username })
@@ -35,6 +39,7 @@ export async function getHighScoreEight(username) {
         .catch((err) => console.log(err.message));
 }
 
+// Function to update the high score for 8-Bit game mode for a specific user
 export async function updateHighScoreEight(username, newHighScoreEight) {
     await axios
         .post('http://localhost:5050/user/updateHighScoreEight', {
@@ -45,6 +50,7 @@ export async function updateHighScoreEight(username, newHighScoreEight) {
         .catch((err) => console.log(err.message));
 }
 
+// Function to sign in a user by sending their username and password to the backend
 export async function signIn(username, password) {
     console.log(username, password);
     return await axios
@@ -53,6 +59,7 @@ export async function signIn(username, password) {
         .catch((err) => console.log(err.message));
 }
 
+// Function to collect leaderboard data based on a selected leaderboard category
 export async function collectLeaderboardData(selectedLeaderboard) {
     return await axios
         .get(

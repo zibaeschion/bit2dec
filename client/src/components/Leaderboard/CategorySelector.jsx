@@ -1,5 +1,6 @@
 import { Select, MenuItem } from '@mui/material';
 
+// CategorySelector component that allows selecting a category from a dropdown
 const CategorySelector = ({ categories, selectedCategory, onChange }) => {
     //The Displayed Categories should not have the name of the variable
     const categoryDisplayNames = {

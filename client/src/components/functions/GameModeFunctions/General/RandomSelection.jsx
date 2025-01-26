@@ -1,6 +1,4 @@
-/*
-    it shuffles the input answerNumber array
- */
+//it shuffles the input answerNumber array
 const RandomSelection = (answerNumber, setSelectedRandomSelection) => {
     const numbers = Array.from({ length: answerNumber }, (_, i) => i);
     for (let i = numbers.length - 1; i > 0; i--) {

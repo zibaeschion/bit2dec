@@ -16,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/user', userRoutes);
 
+// MongoDB connection setup
 mongoose
     .connect(process.env.ATLAS_URI)
     .then((db) => {
@@ -34,10 +35,10 @@ app.use('/api', (req, res) => {
     res.json({ message: 'API funktioniert!' });
 });
 
-// Statische Dateien aus dem React-Build-Ordner ausliefern
+// Serve static files from the React build folder
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// Alle anderen Routen an die React-App weiterleiten
+// Forward all other routes to the React app
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });

@@ -75,6 +75,7 @@ const ClassicMode = () => {
         generateRandomSelection();
     };
 
+    // renders the website; and hands over the correct props
     return (
         <ClassicGameModeLayout
             isCorrect={isCorrect}

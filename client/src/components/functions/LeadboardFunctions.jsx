@@ -1,5 +1,6 @@
 import { collectLeaderboardData } from './APIFunctions.jsx';
 
+// Function to fetch leaderboard data, format and sort it, and handle loading and errors
 export const fetchLeaderboardData = async (
     selectedCategory,
     setLoading,
@@ -22,6 +23,7 @@ export const fetchLeaderboardData = async (
     }
 };
 
+// Helper function to format and sort the leaderboard data
 const formatAndSortLeaderboardData = (data, selectedLeaderboard) => {
     // Formating Data
     const formattedData = data.map((user) => ({

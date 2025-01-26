@@ -3,35 +3,32 @@ import { Box, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Hook for navigating to different routes
+
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexGrow: 1,
-                gap: '1rem',
-            }}
-        >
+        <Box className={'mainContainer'}>
+            {' '}
+            {/* Main container for the page layout */}
+            {/* Button to navigate to the 'gamemodes' page */}
             <Button
                 variant="contained"
-                sx={{ width: '200px', height: '60px', fontSize: '1.5rem' }}
+                className={'mainButton'}
                 onClick={() => navigate('/gamemodes')}
             >
                 PLAY
             </Button>
+            {/* Button to navigate to the 'tutorial' page */}
             <Button
                 variant="contained"
-                sx={{ width: '200px', height: '60px', fontSize: '1.5rem' }}
+                className={'mainButton'}
                 onClick={() => navigate('/tutorial')}
             >
                 TUTORIAL
             </Button>
+            {/* Button to navigate to the 'leaderboard' page */}
             <Button
                 variant="contained"
-                sx={{ width: '200px', height: '60px', fontSize: '1.5rem' }}
+                className={'mainButton'}
                 onClick={() => navigate('/leaderboard')}
             >
                 Leaderboard

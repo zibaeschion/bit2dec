@@ -1,9 +1,11 @@
 # bit2dec
 
 ## Description
+
 Small Project that should help people understand, how to convert binary numbers to decimal numbers.
 
 ## Features
+
 - Tutorial, that explains how to convert binary numbers into decimal numbers
 - 4 Bit and 8 Bit Training Mode also Featuring Hints
 - 4 Bit and 8 Bit Time Mode
@@ -13,6 +15,7 @@ Small Project that should help people understand, how to convert binary numbers 
 - Leaderboard for 4 Bit and 8 Bit Time Mode
 
 ## Screenshots
+
 Homepage
 ![Image](https://github.com/user-attachments/assets/cb069bde-7d49-4bb1-b615-98db68bcfcf4)
 
@@ -37,6 +40,7 @@ Leaderboard
 - Frontend: React, MaterielUI, Vite, Axios
 - Backend: Node.js, Express.js, Cors
 - Database: MongoDB, Mongoose
+- Others: Prettier
 
 ## 🚀 Get Started
 
@@ -45,18 +49,20 @@ Leaderboard
 Download and install the following software:
 
 - Nodist: [GitHub](https://github.com/nodists/nodist)
-  - Alternatively you can just install Node.js
+    - Alternatively you can just install Node.js
 - Code editor
     - Webstorm Ultimate [Windows](https://www.jetbrains.com/de-de/webstorm/download/#section=windows)
     - Every other code editor for JavaScript works too, you might need to do things different in Step 3
 
 #### Step 2: Clone the repository
+
 - Open a new Project in your Code Editor
   ![Image](https://github.com/user-attachments/assets/2ee0a637-2cfe-4637-a65e-9a134acbbf0b)
 - Copy the Repository link
   ![Image](https://github.com/user-attachments/assets/1caea11a-d49e-4115-9ac3-dc4a4d8bc169)
 
 #### Step 3: Run the Project locally
+
 - Go to /client/src/components/functions/APIFunctions.jsx
 - In every function change the "https://[irgendein website link]" to "https://localhost:5173"
 - Open the Terminal
@@ -79,6 +85,7 @@ Download and install the following software:
 - In a browser open "https://localhost:5173"
 
 #### Step 4: Deploy the Project
+
 - Go back to your code editor
 - Go to /client/src/components/functions/APIFunctions.jsx
 - In every function change from "https://localhost:5173" to the link "https://{projectName}.onrender.com"
@@ -99,17 +106,18 @@ Download and install the following software:
 - In the root directory type server
 - In the build command field type: "server/ $ npm install"
 - In the start command field type: "server/ $ npm run start"
-- Add env variable: 
-  - Name: "MONGO_URI" 
-  - Content: "mongodb+srv://groupteewebtech:Sk5hE2WH67pawCaA@bit2dec.8lxju.mongodb.net/?retryWrites=true&w=majority&appName=bit2dec"
+- Add env variable:
+    - Name: "MONGO_URI"
+    - Content: "mongodb+srv://groupteewebtech:Sk5hE2WH67pawCaA@bit2dec.8lxju.mongodb.net/?retryWrites=true&w=majority&appName=bit2dec"
 - Click the deployed link to open the app in the browser, but wait until the deployment is successful
 - Deployment is successful, click the deployed link to open the app in your browser
 
 ## Group Members
+
 - Jason Knossalla
 - Tillman Hegner
 - Thomas Eteridis
 - Nico Ziegenbalg
 - Sebastian Köppen
 
-This is a copy of our group project, that was made in our university gitlab and copied into  GitHub to deploy it in Render
+This is a copy of our group project, that was made in our university gitlab and copied into GitHub to deploy it in Render

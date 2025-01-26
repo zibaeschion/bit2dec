@@ -26,8 +26,10 @@ export default function MathsGameModeLayoutTest(props) {
         correctAnswer,
     } = props;
 
+    // Detects dark mode preference
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     const yellow = prefersDarkMode ? '#ffc700' : '#c29b01';
+
     const [solutionShown, setSolutionShown] = useState(false);
     const [rowRevealed, setRowRevealed] = useState([false, false, false]);
     const [helpNeeded, setHelpNeeded] = useState(false);

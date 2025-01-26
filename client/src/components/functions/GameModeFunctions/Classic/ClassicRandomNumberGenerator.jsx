@@ -9,8 +9,8 @@ const generateRandomNumbersClassic = (
 ) => {
     let maxLength = bitLength === 4 ? 9 : 12; // Determine the maximum array length based on bit length
 
-    let numbers = []; // Store generated random numbers
-    let binaryNumbers = []; // Store corresponding binary representations
+    let numbers = [];
+    let binaryNumbers = [];
 
     // Generate unique random numbers until the array reaches maxLength
     while (numbers.length < maxLength) {
@@ -25,13 +25,11 @@ const generateRandomNumbersClassic = (
                 ? (binaryNumber = convertIntoSpaced(randomNumber, bitLength))
                 : '';
 
-            // Add the number and its binary equivalent to their respective arrays
             numbers.push(randomNumber);
             binaryNumbers.push(binaryNumber);
         }
     }
 
-    // Update state with the generated numbers
     setRandomBinaryNumbers(binaryNumbers);
     setRandomNumbers(numbers);
 };

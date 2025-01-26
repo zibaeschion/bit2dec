@@ -12,7 +12,6 @@ const AnswerChecker = (
     if (!gameOver) {
         setSelectedAnswer(answer);
 
-        // If the answer is correct
         if (answer === correctAnswer) {
             setIsCorrect(true);
             setGameOver(true);

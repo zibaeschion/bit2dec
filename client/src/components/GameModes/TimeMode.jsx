@@ -31,7 +31,8 @@ const TimeMode = () => {
         correctAnswer,
     } = useClassicSettings();
 
-    const { username } = useUser(); // Set a static username
+    // Username of the longed in user
+    const { username } = useUser();
 
     // Local state variables for tracking game progress
     const [showRestartButton, setShowRestartButton] = useState(false);
@@ -119,6 +120,7 @@ const TimeMode = () => {
         setIncorrectClicks(0);
     };
 
+    // renders the website; and hands over the correct props
     return (
         <TimeModeLayout
             timer={time}

@@ -7,6 +7,7 @@ import TutorialGameModeLayout from './TutorialGameModeLayout.jsx';
 import { Typography } from '@mui/material';
 
 export default function FourBitTutorial() {
+    // Retrieve game state and settings using custom hook
     const {
         bitLength,
         numberOfButtons,

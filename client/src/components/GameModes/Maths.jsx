@@ -6,6 +6,7 @@ import useMathsSettings from '../hooks/useMathsSettings.jsx';
 import RandomSelection from '../functions/GameModeFunctions/General/RandomSelection.jsx';
 
 const Maths = () => {
+    // Retrieve game state and settings using custom hook
     const {
         bitLength,
         answerNumber,

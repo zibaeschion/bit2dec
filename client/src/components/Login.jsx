@@ -5,30 +5,33 @@ import { ThemeProvider } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import { signIn, signUp } from './functions/APIFunctions.jsx';
 
+// Login component manages user login and signup forms
 const Login = ({ setUser, handleToggleOpen }) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [isSignUp, setIsSignUp] = useState(false);
+    const [username, setUsername] = useState(''); // Store username input
+    const [password, setPassword] = useState(''); // Store password input
+    const [isSignUp, setIsSignUp] = useState(false); // Toggle between SignUp/Login
 
+    // Cancel action to reset input fields and close modal
     const handleCancel = () => {
         setUsername('');
         setPassword('');
         handleToggleOpen();
     };
 
+    // Switch between SignUp and Login form
     const handleSwitchForm = () => {
         setIsSignUp((prev) => !prev);
     };
 
+    // Handle form submission for either login or signup
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isSignUp) {
-            signUp(username, password);
+            signUp(username, password); // SignUp request
             handleCancel();
         } else {
-            signIn(username, password)
+            signIn(username, password) // SignIn request
                 .then((result) => {
-                    console.log(result.username);
                     setUser(result.username);
                     handleCancel();
                 })
@@ -39,16 +42,7 @@ const Login = ({ setUser, handleToggleOpen }) => {
     return (
         <ThemeProvider theme={theme}>
             <form onSubmit={handleSubmit}>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'space-between',
-                        gap: 2,
-                        backgroundColor: '#333',
-                        color: 'white',
-                    }}
-                >
+                <Box className={'loginContainer'}>
                     <Typography variant="h4" gutterBottom>
                         {isSignUp ? 'Create Account' : 'Login'}
                     </Typography>
@@ -73,18 +67,14 @@ const Login = ({ setUser, handleToggleOpen }) => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
 
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                        }}
-                    >
+                    <Box className={'loginContainer2'}>
+                        {/* Conditional Link to toggle between forms */}
                         {isSignUp ? (
                             <Link
                                 href="#"
                                 variant="body2"
                                 onClick={handleSwitchForm}
-                                sx={{ cursor: 'pointer', color: 'white' }}
+                                className={'loginElement'}
                             >
                                 Back to Login
                             </Link>
@@ -93,21 +83,23 @@ const Login = ({ setUser, handleToggleOpen }) => {
                                 href="#"
                                 variant="body2"
                                 onClick={handleSwitchForm}
-                                sx={{ cursor: 'pointer', color: 'white' }}
+                                className={'loginElement'}
                             >
                                 Create Account
                             </Link>
                         )}
 
+                        {/* Forgot password link */}
                         <Link
                             href="#"
                             variant="body2"
-                            sx={{ cursor: 'pointer', color: 'white' }}
+                            className={'loginElement'}
                         >
                             Forgot Password?
                         </Link>
                     </Box>
 
+                    {/* Submit button */}
                     <Button
                         type="submit"
                         variant="outlined"
@@ -117,6 +109,7 @@ const Login = ({ setUser, handleToggleOpen }) => {
                         {isSignUp ? 'Sign Up' : 'Log In'}
                     </Button>
 
+                    {/* Cancel button */}
                     <Button
                         variant="outlined"
                         color="white"
@@ -131,7 +124,7 @@ const Login = ({ setUser, handleToggleOpen }) => {
     );
 };
 
-// Pass the ESLint validation and have proper prop validation
+// Prop validation for handling 'handleToggleOpen'
 Login.propTypes = {
     handleToggleOpen: PropTypes.func.isRequired,
 };
