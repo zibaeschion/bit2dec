@@ -1,3 +1,5 @@
+import UserModel from "../models/user.js";
+
 // Registers a new user with the provided username and password, saving them to the database.
 const register = async (req, res) => {
     const { username, password } = req.body;
