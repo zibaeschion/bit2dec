@@ -3,7 +3,7 @@ import axios from 'axios';
 // Function to sign up a new user by sending their username and password to the backend
 export async function signUp(username, password) {
     axios
-        .post('http://localhost:5050/user/register', { username, password })
+        .post('https://bit2dec.onrender.com/user/register', { username, password })
         .then((result) => {})
         .catch((err) => console.log(err.message));
 }
@@ -11,7 +11,7 @@ export async function signUp(username, password) {
 // Function to get the high score for 4-Bit game mode for a specific user
 export async function getHighScoreFour(username) {
     return await axios
-        .post('http://localhost:5050/user/getHighScoreFour/', { username })
+        .post('https://bit2dec.onrender.com/user/getHighScoreFour/', { username })
         .then((result) => {
             return result.data;
         })
@@ -21,7 +21,7 @@ export async function getHighScoreFour(username) {
 // Function to update the high score for 4-Bit game mode for a specific user
 export async function updateHighScoreFour(username, newHighScoreFour) {
     await axios
-        .post('http://localhost:5050/user/updateHighScoreFour', {
+        .post('https://bit2dec.onrender.com/user/updateHighScoreFour', {
             username,
             newHighScoreFour,
         })
@@ -32,7 +32,7 @@ export async function updateHighScoreFour(username, newHighScoreFour) {
 // Function to get the high score for 8-Bit game mode for a specific user
 export async function getHighScoreEight(username) {
     return await axios
-        .post('http://localhost:5050/user/getHighScoreEight/', { username })
+        .post('https://bit2dec.onrender.com/user/getHighScoreEight/', { username })
         .then((result) => {
             return result.data;
         })
@@ -42,7 +42,7 @@ export async function getHighScoreEight(username) {
 // Function to update the high score for 8-Bit game mode for a specific user
 export async function updateHighScoreEight(username, newHighScoreEight) {
     await axios
-        .post('http://localhost:5050/user/updateHighScoreEight', {
+        .post('https://bit2dec.onrender.com/user/updateHighScoreEight', {
             username,
             newHighScoreEight,
         })
@@ -54,7 +54,7 @@ export async function updateHighScoreEight(username, newHighScoreEight) {
 export async function signIn(username, password) {
     console.log(username, password);
     return await axios
-        .post('http://localhost:5050/user/signIn', { username, password })
+        .post('https://bit2dec.onrender.com/user/signIn', { username, password })
         .then((result) => result.data)
         .catch((err) => console.log(err.message));
 }
@@ -63,7 +63,7 @@ export async function signIn(username, password) {
 export async function collectLeaderboardData(selectedLeaderboard) {
     return await axios
         .get(
-            `http://localhost:5050/user/LeaderboardData/${selectedLeaderboard}`
+            `https://bit2dec.onrender.com/user/LeaderboardData/${selectedLeaderboard}`
         )
         .then((result) => result.data)
         .catch((err) => {
