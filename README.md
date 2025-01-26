@@ -1,4 +1,4 @@
-# bit2dec
+![bit2dec.png](client/src/assets/bit2dec.png)
 
 ## Description
 
@@ -56,10 +56,14 @@ Download and install the following software:
 
 #### Step 2: Clone the repository
 
-- Open a new Project in your Code Editor
+- Open a new Project in your Code Editor:
+
   ![Image](https://github.com/user-attachments/assets/2ee0a637-2cfe-4637-a65e-9a134acbbf0b)
-- Copy the Repository link
+
+- Copy the Repository link:
+
   ![Image](https://github.com/user-attachments/assets/1caea11a-d49e-4115-9ac3-dc4a4d8bc169)
+
 
 #### Step 3: Run the Project locally
 
@@ -70,21 +74,38 @@ Download and install the following software:
 ```bash
   npm install
   ```
+
+
   ![Image](https://github.com/user-attachments/assets/41d0928b-b2f0-4829-96da-fbab58cb6fac)
+
   ![Image](https://github.com/user-attachments/assets/061a24dc-2fa2-49d3-940a-80139502b77d)
-- To start the Project in Webstorm follow the directions of the following pictures
+
+- To start the Project in Webstorm follow the directions of the following pictures:
+
   ![Image](https://github.com/user-attachments/assets/9bcb6dbd-bcea-4d0e-8e88-6a12a2915d7e)
+
   ![Image](https://github.com/user-attachments/assets/0432cc7b-d380-44db-87a6-0bdc5f47e1e2)
+
   ![Image](https://github.com/user-attachments/assets/e74bf758-2552-4096-bf9b-dfc7d615f525)
+
   ![Image](https://github.com/user-attachments/assets/b28b7f65-fdc2-4637-b566-b9c1f7fef04c)
+
   ![Image](https://github.com/user-attachments/assets/7b992804-6109-460c-8b85-6cc9b19f88cc)
+
   ![Image](https://github.com/user-attachments/assets/9612b317-c8f6-4bfb-9f5d-664f4f76323e)
+
   ![Image](https://github.com/user-attachments/assets/ea8442f4-05bc-4e1b-bcb8-e7f5d911b8f4)
+
   ![Image](https://github.com/user-attachments/assets/31616a02-2c1a-4386-8e4e-69641ecc1430)
+
   ![Image](https://github.com/user-attachments/assets/053b162e-8ec6-4fde-a374-4a50952f0d78)
+
   ![Image](https://github.com/user-attachments/assets/f94d5e01-17a6-4af4-9cf1-953b0e1ad3c8)
+
   ![Image](https://github.com/user-attachments/assets/b479bd5f-e2da-4264-a723-0904814b9092)
+
   ![Image](https://github.com/user-attachments/assets/fc4d9b5a-b2be-4d5a-bdfd-57abfe490b7a)
+
 - In a browser open "https://localhost:5173"
 
 #### Step 4: Deploy the Project
